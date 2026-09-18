@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوت‌نامه | دبستان متفکران علوی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;font-family:Vazirmatn,Tahoma,sans-serif;
+ background:linear-gradient(135deg,#dff7ff 0%,#fff5c7 45%,#ffe2ee 100%);
+ overflow-x:hidden;color:#173b63;
+}
+body:before,body:after{
+ content:"";position:fixed;border-radius:50%;filter:blur(2px);opacity:.45;pointer-events:none
+}
+body:before{width:280px;height:280px;background:#ffd33d;top:-100px;right:-70px}
+body:after{width:300px;height:300px;background:#ff8db6;bottom:-140px;left:-100px}
+.container{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.stage{width:min(900px,100%);text-align:center}
+.intro{
+ font-size:clamp(16px,3vw,21px);font-weight:800;color:#15579b;margin-bottom:18px;
+ animation:pulse 1.8s infinite
+}
+@keyframes pulse{50%{transform:scale(1.03)}}
+.envelope{
+ width:min(760px,94vw);height:520px;margin:auto;position:relative;
+ cursor:pointer;perspective:1400px;filter:drop-shadow(0 25px 28px rgba(35,70,100,.22))
+}
+.env-body{
+ position:absolute;inset:0;border-radius:25px;
+ background:linear-gradient(145deg,#ffd94c,#ffae00);
+ border:4px solid #e29300;overflow:hidden
+}
+.env-body:before,.env-body:after{
+ content:"";position:absolute;width:75%;height:70%;bottom:-30%;
+ background:#ffc52e;opacity:.9
+}
+.env-body:before{right:-15%;transform:rotate(32deg)}
+.env-body:after{left:-15%;transform:rotate(-32deg)}
+.card{
+ position:absolute;z-index:3;left:7%;right:7%;top:35px;height:435px;
+ padding:30px 28px;background:linear-gradient(180deg,#fff,#fffaf0);
+ border:3px solid #f2d48d;border-radius:22px;
+ box-shadow:0 12px 30px rgba(91,61,20,.20);
+ transform:translateY(130px);opacity:0;
+ transition:transform 1s cubic-bezier(.18,.82,.2,1),opacity .45s;
+}
+.flap{
+ position:absolute;z-index:6;top:0;left:0;right:0;height:300px;
+ transform-origin:top center;
+ clip-path:polygon(0 0,100% 0,50% 100%);
+ background:linear-gradient(150deg,#ffe76b,#ffb300);
+ border-radius:25px 25px 0 0;
+ transition:transform 1s cubic-bezier(.18,.82,.2,1)
+}
+.front{
+ position:absolute;z-index:5;left:0;right:0;bottom:0;height:270px;
+ clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);
+ background:linear-gradient(145deg,#ffd03b,#f29a00);
+ border-radius:0 0 25px 25px
+}
+.seal{
+ position:absolute;z-index:8;left:50%;top:275px;transform:translate(-50%,-50%);
+ width:92px;height:92px;border-radius:50%;display:grid;place-items:center;
+ background:linear-gradient(145deg,#f32f68,#c7194d);border:6px solid #fff;
+ box-shadow:0 8px 20px rgba(111,24,59,.35);font-size:39px;color:#fff;
+ transition:opacity .35s,transform .5s
+}
+.open .flap{transform:rotateX(180deg);z-index:2}
+.open .card{transform:translateY(-15px);opacity:1;z-index:7}
+.open .seal{opacity:0;transform:translate(-50%,-50%) scale(.6)}
+.open .front{z-index:2}
+.decor{font-size:36px;letter-spacing:10px;margin-bottom:5px}
+h1{margin:0;color:#e6285d;font-size:clamp(27px,5vw,46px);font-weight:900}
+h2{margin:4px 0 20px;color:#1461a8;font-size:clamp(21px,4vw,31px);font-weight:900}
+.info{max-width:610px;margin:auto;display:grid;gap:11px}
+.item{
+ background:linear-gradient(90deg,#edf8ff,#f8fcff);border:1px solid #cce8fa;
+ border-radius:16px;padding:11px 14px;font-size:clamp(14px,2.8vw,18px);
+ font-weight:700;color:#174d7b
+}
+.message{margin-top:17px;font-size:17px;font-weight:800;color:#df3261}
+.tag{
+ display:inline-block;margin-top:13px;padding:9px 19px;border-radius:999px;
+ background:#176fe5;color:#fff;font-size:14px;font-weight:800;
+ box-shadow:0 5px 13px #176fe544
+}
+.footer{margin-top:17px;color:#52718e;font-size:13px}
+@media(max-width:600px){
+ .envelope{height:570px}.card{height:485px;padding:27px 15px}
+ .flap{height:315px}.front{height:285px}.seal{top:290px}
+ .decor{font-size:28px;letter-spacing:5px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="stage">
+<div class="intro" id="hint">💌 برای باز کردن دعوت‌نامه، روی پاکت بزنید</div>
+
+<div class="envelope" id="envelope" tabindex="0" role="button" aria-label="باز کردن دعوت‌نامه">
+  <div class="env-body"></div>
+
+  <div class="card">
+    <div class="decor">🎈 📚 ✏️ 🌈</div>
+    <h1>دعوت به جشن</h1>
+    <h2>آغاز سال تحصیلی<br>دبستان متفکران علوی</h2>
+
+    <div class="info">
+      <div class="item">📅 یکشنبه ۲۹ شهریور ماه</div>
+      <div class="item">⏰ از ساعت ۱۰ صبح</div>
+      <div class="item">🎬 سینما شاهین طلایی شاهین شهر</div>
+    </div>
+
+    <div class="message">حضور گرم شما، آغازگر یک سال شیرین و خاطره‌انگیز است 🌸</div>
+    <div class="tag">با افتخار منتظر دیدار شما هستیم</div>
+  </div>
+
+  <div class="flap"></div>
+  <div class="front"></div>
+  <div class="seal">✉️</div>
+</div>
+
+<div class="footer">با یک کلیک، پاکت باز می‌شود ✨</div>
+</div>
+</div>
+
+<script>
+const envelope=document.getElementById('envelope');
+const hint=document.getElementById('hint');
+let opened=false;
+function openEnvelope(){
+ if(opened)return;
+ opened=true;
+ envelope.classList.add('open');
+ hint.textContent='✨ دعوت‌نامه شما با موفقیت باز شد';
+}
+envelope.addEventListener('click',openEnvelope);
+envelope.addEventListener('keydown',e=>{
+ if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnvelope();}
+});
+</script>
+</body>
+</html>
